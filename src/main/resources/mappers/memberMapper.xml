@@ -13,7 +13,7 @@
     </insert>
 
     <!-- 아이디 중복 확인 -->
-    <select id="idCheck" parameterType="String">
+    <select id="idCheck" parameterType="string" resultType="int">
         select count(member_id) from member where member_id=#{memberId}
     </select>
 

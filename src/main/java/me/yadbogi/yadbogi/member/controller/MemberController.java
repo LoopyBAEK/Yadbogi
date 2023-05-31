@@ -1,6 +1,7 @@
 package me.yadbogi.yadbogi.member.controller;
 
 import me.yadbogi.yadbogi.member.model.dto.MemberDTO;
+import me.yadbogi.yadbogi.member.model.dto.MemberIdCheck;
 import me.yadbogi.yadbogi.member.model.dto.MemoryAuthManager;
 import me.yadbogi.yadbogi.member.model.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,10 @@ public class MemberController {
 
     // 아이디 중복 확인
     @PostMapping("/idValidCheck")
-    public void idCheck(@RequestBody String memberId){
-        int count = memberService.idCheck(memberId);
+    public ResponseEntity<Void> idCheck(@RequestBody MemberIdCheck memberId){
+        return memberService.idCheck(memberId)?
+                new ResponseEntity<>(HttpStatus.OK):
+                new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
     // 회원가입
