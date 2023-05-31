@@ -21,12 +21,6 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    // 비밀번호 확인
-    @PostMapping("/pwdValidCheck")
-    public void pwdCheck(@RequestBody String memberPwd){
-
-    }
-
     // 아이디 중복 확인
     @PostMapping("/idValidCheck")
     public void idCheck(@RequestBody String memberId){
