@@ -5,12 +5,11 @@
         <result column="MEMBER_ID" property="memberId"/>
         <result column="MEMBER_PWD" property="memberPwd"/>
         <result column="MEMBER_NAME" property="memberName"/>
-        <result column="MEMBER_EMAIL" property="memberEmail"/>
     </resultMap>
 
     <!-- 회원가입 -->
     <insert id="registMember" parameterType="MemberDTO">
-        insert into member values(#{memberId}, #{memberPwd}, #{memberName}, #{memberEmail})
+        insert into member values(#{memberId}, #{memberPwd}, #{memberName})
     </insert>
 
     <!-- 아이디 중복 확인 -->
