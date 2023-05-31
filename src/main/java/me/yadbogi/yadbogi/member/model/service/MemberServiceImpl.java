@@ -2,6 +2,7 @@ package me.yadbogi.yadbogi.member.model.service;
 
 import me.yadbogi.yadbogi.member.model.dao.MemberDAO;
 import me.yadbogi.yadbogi.member.model.dto.MemberDTO;
+import me.yadbogi.yadbogi.member.model.dto.MemberIdCheck;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +22,8 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public int idCheck(String memberId) {
-        return memberDAO.idCheck(memberId);
+    public boolean idCheck(MemberIdCheck memberId) {
+        return memberDAO.idCheck(memberId) == 0;
     }
 
     @Override

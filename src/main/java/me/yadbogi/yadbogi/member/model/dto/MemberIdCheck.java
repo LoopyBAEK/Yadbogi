@@ -2,14 +2,11 @@ package me.yadbogi.yadbogi.member.model.dto;
 
 import lombok.*;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class MemberDTO {
-
+public class MemberIdCheck {
     private String memberId;
-    private String memberPwd;
-    private String memberName;
 }

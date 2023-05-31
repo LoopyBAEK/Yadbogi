@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="me.yadbogi.yadbogi.member.model.dao">
+<mapper namespace="me.yadbogi.yadbogi.member.model.dao.MemberDAO">
     <resultMap id="MemberMapper" type="MemberDTO">
         <result column="MEMBER_ID" property="memberId"/>
         <result column="MEMBER_PWD" property="memberPwd"/>
         <result column="MEMBER_NAME" property="memberName"/>
-        <result column="MEMBER_EMAIL" property="memberEmail"/>
     </resultMap>
 
     <!-- 회원가입 -->
     <insert id="registMember" parameterType="MemberDTO">
-        insert into member values(#{memberId}, #{memberPwd}, #{memberName}, #{memberEmail})
+        insert into member values(#{memberId}, #{memberPwd}, #{memberName})
     </insert>
 
     <!-- 아이디 중복 확인 -->
-    <select id="idCheck" parameterType="String">
+    <select id="idCheck" parameterType="string" resultType="int">
         select count(member_id) from member where member_id=#{memberId}
     </select>
 
