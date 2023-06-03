@@ -18,7 +18,7 @@
     </select>
 
     <!-- 로그인 -->
-    <select id="login" parameterType="MemberDTO">
+    <select id="login" parameterType="MemberDTO" resultMap="MemberMapper">
         select member_id, member_name from member where member_id=#{memberId} and member_pwd=#{memberPwd}
     </select>
 
