@@ -31,4 +31,9 @@ public class MemberServiceImpl implements MemberService{
         return memberDAO.login(member);
     }
 
+    @Override
+    public void quit(String memberId) {
+        memberDAO.quit(memberId);
+    }
+
 }

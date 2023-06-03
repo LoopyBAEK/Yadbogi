@@ -22,4 +22,9 @@
         select member_id, member_name from member where member_id=#{memberId} and member_pwd=#{memberPwd}
     </select>
 
+    <!-- 회원탈퇴 -->
+    <delete id="quit" parameterType="string">
+        delete from member where member_id=#{memberId}
+    </delete>
+
 </mapper>

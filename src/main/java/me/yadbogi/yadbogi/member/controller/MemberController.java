@@ -44,7 +44,7 @@ public class MemberController {
         // 로그인한 회원의 정보
         MemberDTO loginUser = memberService.login(member);
 
-        MemoryAuthManager.setLoginUser(loginUser.getMemberName());
+        MemoryAuthManager.setLoginUser(loginUser.getMemberId());
 
         return new ResponseEntity<>(loginUser, HttpStatus.OK);
     }
@@ -57,5 +57,14 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    // 회원탈퇴
+    @PostMapping("/quit")
+    public ResponseEntity<Void> quit(HttpServletRequest request){
+        String memberId = MemoryAuthManager.getLoginUser();
+        System.out.println(memberId);
 
+        memberService.quit(memberId);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

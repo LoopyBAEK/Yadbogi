@@ -10,8 +10,8 @@ public class MemoryAuthManager {
         return loginUser;
     }
 
-    public static void setLoginUser(String memberName) {
-        loginUser = memberName;
+    public static void setLoginUser(String memberId) {
+        loginUser = memberId;
     }
 
     // 로그아웃
