@@ -10,4 +10,6 @@ public interface MemberDAO {
     int idCheck(MemberIdCheck memberId);
 
     MemberDTO login(MemberDTO member);
+
+    void quit(String memberId);
 }
